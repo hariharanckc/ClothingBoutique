@@ -1,0 +1,641 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    /* background-color: blue; */
+    height: 15vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header p {
+    color: #A8A6D2;
+    font-family: Carisma !important;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.header h3 {
+    margin-left: 5%;
+    font-size: 40px;
+
+}
+
+.body {
+    height: 45vh;
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+
+form {
+    height: 55vh;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input {
+    /* background-color: red; */
+    border: transparent;
+    border-bottom: 3px dotted rgb(232, 217, 217);
+    padding: 2vh;
+    font-size: 16px;
+    border-radius: 2px;
+    text-decoration: none;
+    /* background-color: transparent; */
+    width:75%;
+}
+
+#radio {
+    /* background-color: red; */
+    border: transparent;
+    padding: 2vh;
+    font-size: 16px;
+    border-radius: 2px;
+    text-decoration: none;
+    /* background-color: transparent; */
+    width:20vw;
+}
+
+.form{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+/* background-color: orange; */
+height:60vh;
+width:50vh;
+}
+
+
+input::placeholder {
+    color: rgb(214, 207, 207);
+}
+
+#input::placeholder {
+    font-weight: 300;
+}
+
+.error1::placeholder {
+    color: red;
+    /* Change the placeholder color when the 'error' class is applied */
+}
+
+.password{
+    position: relative;
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   margin-right: 5%;
+   margin: 0;
+
+}
+#svg{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 7%;
+height:3vh;
+width:10%;
+}
+
+.error {
+    height: 3vh;
+    width: 85%;
+    display: flex;
+    align-items: center;
+
+    font-size: 11px;
+    color: rgb(138, 206, 202);
+    text-transform: capitalize;
+}
+
+.button {
+    width: 70%;
+    margin: 8%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.horizontalline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-weight: 600;
+    margin: 0%;
+
+}
+
+.horizontalline hr {
+    font-weight: 600;
+    width: 40%;
+    margin: 2%;
+}
+
+#button {
+    background-color: rgb(0, 200, 255);
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    /* opacity: 9%; */
+}
+
+.socialmedia {
+    height: 20vh;
+    width: 85%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Skilt Gothic, !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 105%;
+}
+
+.socialmedia p {
+    margin-top: 10%;
+
+}
+
+
+.socialmediaimage {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.socialmediaimage svg {
+    width: 10%;
+    height: 45%;
+    margin: 2%;
+
+}
+
+.socialmediaimage img {
+
+    width: 10%;
+    height: 45%;
+    margin: 2%;
+
+}
+
+.footer {
+    height: 5vh;
+    width: 97%;
+    display: flex;
+    font-size: 11px;
+}
+
+#p {
+    color: blue;
+    font-weight: 700;
+}
+
+#p:hover {
+    color: rgb(159, 204, 243);
+}
+
+.foooter p {
+    padding: 2%;
+}
+#passwordwidth{
+    width: 65vw;
+    border: transparent;
+    border-bottom: 3px dotted rgb(232, 217, 217);
+    padding: 2vh;
+    font-size: 16px;
+    border-radius: 2px;
+    text-decoration: none;
+    /* background-color: transparent; */
+}
+
+
+
+@media only screen and (min-width: 769px) {
+     .container{
+        /* background-color: blue; */
+        align-items: none;
+
+     }
+    .header {
+        /* background-color: red; */
+        height: 15vh;
+        width: 70%;
+        /* margin-bottom: 10vh; */
+    }
+    #passwordwidth{
+        width: 23vw;
+        border: transparent;
+        border-bottom: 3px dotted rgb(232, 217, 217);
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+    }
+ 
+    
+
+    .body {
+        /* background-color: yellow; */
+        height:60vh;
+        width:70%;
+    
+    }
+    
+    
+    form {
+        height:60vh;
+        width:100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        /* background-color: red; */
+        
+    }
+    
+    #input {
+        /* background-color: red; */
+        border: transparent;
+        border-bottom: 3px dotted rgb(232, 217, 217);
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+        width:75%;
+    }
+    
+    #radio {
+        /* background-color: red; */
+        border: transparent;
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+        width:10vw;
+    }
+ 
+   .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: orange; */
+    height:60vh;
+    width:70vh;
+   }
+    
+
+#e{
+    color: red;
+    font-size: 1.5vh;
+
+}
+
+#e1{
+    color: red;
+    font-size: 1.5vh;
+    line-height: 2vh;
+}
+   
+    .button {
+        width: 40%;
+        margin: 2%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10%;
+        border: none;
+     
+    }
+    
+    #button {
+        background-color: rgb(0, 200, 255);
+        border: none;
+        outline: none;
+        
+        padding: 9px;
+        width: 50%;
+        /* opacity: 9%; */
+        margin-right: 5vw;
+    }
+    
+    .horizontalline {
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        font-weight: 600;
+        margin: 0%;
+        margin-left: 8vh;
+    
+    }
+    
+    .horizontalline hr {
+        font-weight: 600;
+        width: 40%;
+        margin: 1%;
+    }
+ 
+    
+    .socialmedia {
+        /* background-color: yellow; */
+        height:10vh;
+        width: 50%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Skilt Gothic, !important;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 105%;
+        margin-left: 8vh;
+
+    }
+    
+    .socialmedia p {
+        margin-top: 4%;
+    
+    }
+    
+    
+    .socialmediaimage {
+        height: 7vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .socialmediaimage svg {
+        width: 10%;
+        height: 55%;
+        margin: 2%;
+    
+    }
+    
+    .socialmediaimage img {
+    
+        width: 10%;
+        height: 45%;
+        margin: 2%;
+    
+    }
+    
+    .footer {
+        /* background-color: red; */
+        height: 3vh;
+        width: 97%;
+        display: flex;
+        font-size: 15px;
+        margin-right: 20vw;
+
+    }
+    
+    #p {
+
+        color: blue;
+        font-weight: 700;
+    }
+    
+    #p:hover {
+        color: rgb(159, 204, 243);
+    }
+    
+    .foooter p {
+        padding: -3%;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+}
+
+@media only screen and (min-width: 420px) and (max-width: 767px)
+{
+    
+    .header {
+        /* background-color: red; */
+        height: 15vh;
+        width: 70%;
+
+    }
+    
+ 
+    
+
+    .body {
+        /* background-color: yellow; */
+        height:50vh;
+        width:50%;
+    
+    }
+    
+    
+    form {
+        height:50vh;
+        width:100%;
+        margin-top: 2vh;
+    
+    }
+    
+
+    #passwordwidth{
+        width: 44vw;
+        border: transparent;
+        border-bottom: 3px dotted rgb(232, 217, 217);
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+    }
+
+    #input {
+        /* background-color: red; */
+        border: transparent;
+        border-bottom: 3px dotted rgb(232, 217, 217);
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+        width:75%;
+    }
+    
+    #radio {
+        /* background-color: red; */
+        border: transparent;
+        padding: 2vh;
+        font-size: 16px;
+        border-radius: 2px;
+        text-decoration: none;
+        /* background-color: transparent; */
+        width:20vw;
+    }
+    
+    .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: orange; */
+    height:70vh;
+    width:70vh;
+    }
+    
+        
+    
+ 
+   
+    
+
+    
+   
+    .button {
+        width: 40%;
+        margin: 2%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10%;
+    
+    }
+    
+    #button {
+        background-color: rgb(0, 200, 255);
+        border: none;
+        outline: none;
+        padding: 7px;
+        width: 100%;
+        /* opacity: 9%; */
+    }
+    
+    .horizontalline {
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        font-weight: 600;
+        margin: 0%;
+        margin-left: 8vh;
+    
+    }
+    
+    .horizontalline hr {
+        font-weight: 600;
+        width: 40%;
+        margin: 1%;
+    }
+ 
+    
+    .socialmedia {
+        /* background-color: yellow; */
+        height:10vh;
+        width: 50%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Skilt Gothic, !important;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 105%;
+        margin-left: 8vh;
+
+    }
+    
+    .socialmedia p {
+        margin-top: 4%;
+    
+    }
+    
+    
+    .socialmediaimage {
+        height: 7vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .socialmediaimage svg {
+        width: 10%;
+        height: 55%;
+        margin: 2%;
+    
+    }
+    
+    .socialmediaimage img {
+    
+        width: 10%;
+        height: 45%;
+        margin: 2%;
+    
+    }
+    
+    .footer {
+        /* background-color: red; */
+        height: 3vh;
+        width: 97%;
+        display: flex;
+        font-size: 15px;
+        margin-right: 20vw;
+
+    }
+    
+    #p {
+
+        color: blue;
+        font-weight: 700;
+    }
+    
+    #p:hover {
+        color: rgb(159, 204, 243);
+    }
+    
+    .foooter p {
+        padding: -3%;
+    }
+    
+    
+
+}

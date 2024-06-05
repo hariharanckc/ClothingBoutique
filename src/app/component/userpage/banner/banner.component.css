@@ -1,0 +1,103 @@
+.flex {
+  margin-top: 2vh;
+  height: 70vh;
+  width: 98svw;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightflex {
+  height: 70vh;
+  width: 60svw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background-color: #F5F5F5;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+  animation: slideIn 1s;
+}
+
+.carousel-slide img {
+  height: 70vh;
+  width: 60svw;
+
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.leftside {
+  width: 40svw;
+  height: 70vh;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftflex img {
+  width: 38svw;
+  height: 35vh;
+  padding: 1vh;
+
+}
+
+.rightbottom {
+  height: 35vh;
+  width: 38svw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightleft {
+  height: 30vh;
+  width: 18.5svw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+option {
+  height: 10vh;
+  width: 20vw;
+}
+
+.rightleft img {
+  height: 28vh;
+  width: 20.5svw;
+  padding-right: 0.5vw;
+}
+
+.leftleft {
+  height: 30vh;
+  width: 19.5svw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.leftleft img {
+  height: 28vh;
+  width: 19.5svw;
+  padding-left: 0.5vw;
+}

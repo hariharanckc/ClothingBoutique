@@ -1,0 +1,101 @@
+
+    <div class="background" >
+        <div class="container">
+            <div class="header">
+                <div class="navs">
+                
+  <div class="header2">
+    <p (click)="home()"> <i class="bi bi-house-door-fill"></i> <span>Home</span> </p>
+    <p (click)="productcreation1()"> <i class="bi bi-people-fill"></i><span>productcreation</span></p>
+    <p (click)="productupdation()"> <i  class="bi bi-bar-chart"></i><span>ProductUpdation</span></p>
+</div>
+               
+                </div>
+                <div class="headerpopup">
+                    <div class="headerbody">
+                    <form action="" [formGroup]="productcreation">
+
+                        <div  class="formleft" >
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <label > ImageUrl </label> &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input  placeholder="imageURL" formControlName="imageURL" name="imageURL">
+                     
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <label > ProductName </label> 
+                            <div  style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                            <input type="text" placeholder="productname" formControlName="Pname" name="Pname">
+                            <div id="errorcolor" *ngIf="productcreation.get('Pname')?.invalid && (productcreation.get('Pname')?.dirty || productcreation.get('Pname')?.touched)">
+                                <div *ngIf="productcreation.get('Pname')?.errors?.['required']">Name is required.</div>
+                                <div *ngIf="productcreation.get('Pname')?.errors?.['minlength']">Name must be at least 2 characters long.</div>
+                                <div *ngIf="productcreation.get('Pname')?.errors?.['maxlength']">Name cannot exceed 50 characters.</div>
+                                <div *ngIf="productcreation.get('Pname')?.errors?.['pattern']">Invalid characters in name.</div>
+                            </div>
+                        </div>
+                        </div>
+                            <div class="formright">
+                            <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                                
+                             <div>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label > OriginalPrice </label>&nbsp;&nbsp;
+                            <input  type="number" placeholder="originalprice" formControlName="OriginalPrice"  name="OriginalPrice">
+                            <div id="errorcolor" style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin-left: 10svw;"  *ngIf="productcreation.get('OriginalPrice')?.invalid && productcreation.get('OriginalPrice')?.touched">
+                                <div id="snumber" *ngIf="productcreation.get('OriginalPrice')?.errors?.hasOwnProperty('required')">
+                                    OriginalPrice is required.
+                                </div>
+                                <div id="snumber" *ngIf="productcreation.get('OriginalPrice')?.errors?.hasOwnProperty('pattern')">
+                                  Please enter a valid OriginalPrice.
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label > Offer </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="display: flex;align-items: center;justify-content: center;flex-direction: column; ">
+                            <input type="number"  placeholder="offer" formControlName="Offer" name="Offer">
+                            <div id="errorcolor" *ngIf="productcreation.get('Offer')?.invalid && productcreation.get('Offer')?.touched">
+                                <div id="snumber" *ngIf="productcreation.get('Offer')?.errors?.hasOwnProperty('required')">
+                                    Offer is required.
+                                </div>
+                                <div id="snumber" *ngIf="productcreation.get('Offer')?.errors?.hasOwnProperty('pattern')">
+                                  Please enter a valid Offer
+                                </div>
+                              </div>
+                              </div>
+                        </div>
+                                              <div class="lastform1">
+                                                
+                        <label > Stock </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div style="display: flex;align-items: center;justify-content: center;flex-direction: column; ">
+
+                            <input type="number"  placeholder="stock" formControlName="Stock" name="Stock">
+                            <div id="errorcolor" *ngIf="productcreation.get('Stock')?.invalid && productcreation.get('Stock')?.touched">
+                                <div id="snumber" *ngIf="productcreation.get('Stock')?.errors?.hasOwnProperty('required')">
+                                    Stock is required.
+                                </div>
+                                <div id="snumber" *ngIf="productcreation.get('Stock')?.errors?.hasOwnProperty('pattern')">
+                                  Please enter a valid Stock.
+                                </div>
+                              </div>
+                            </div>
+<div style="margin-right: 6svw;">
+                                <mat-form-field style="width: 20svw;margin-left: 1vw;">
+                                    <mat-label>Product_Section
+                                    </mat-label>
+                                    <mat-select formControlName="Section" name="food">
+                                    <div *ngFor="let category of categories">
+                                        <mat-option [value]="category">{{category}}</mat-option>
+                                    </div>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                              </div>
+<button [disabled]="!productcreation.valid" (click)="validation()"  >Add</button>
+                    </form>
+                </div>
+      </div>
+                </div>
+            </div>
+        <div class="footer">
+            <p style="color: wheat;font-size: 1.3vh;">clothingboutiques@gmail.com</p>
+            </div>
+        </div>
+    
+        
+    

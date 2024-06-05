@@ -1,0 +1,10 @@
+<div *ngIf="showSplash" class="splash-container ">
+  <div class="pop-element">
+    <img src="/assets/images/logodress.jpg">
+  </div>
+</div>
+<div class="loginworks" *ngIf="!showSplash">
+  <div class="button">
+    <button (click)="login()">login</button>
+  </div>
+</div>

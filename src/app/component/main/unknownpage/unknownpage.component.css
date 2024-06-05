@@ -1,0 +1,39 @@
+.unknowncontainer{
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.image {
+    height: 20vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.image i{
+    font-weight: 400;
+    font-size: 6vh;
+    color: red;
+}
+p span{
+    font-size: 6vh;
+    font-weight: 600;
+    color: black;
+}
+.image p{
+    font-size: 4vh;
+}
+.text{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0vh;
+}
+.text p{
+    font-size: 2vh;
+}

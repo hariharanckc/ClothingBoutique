@@ -1,0 +1,66 @@
+<div class="headercontainer">
+    <div>
+        <div class="header1">
+            <p>
+                <img src="\assets\images\user\logo.png" alt="logo">
+            </p>
+            <div class="rightheader">
+       
+                <div class="i">
+                    <i (click)="addtocart()" class="bi bi-cart4"></i>
+                </div>
+                <div class="profiles">
+                    <div (click)="profiles()" class="profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="opencartbackground1" *ngIf="!opencart">
+        
+        <div class="cancel">
+            <i (click)="closeaddtocart()" class="bi bi-x"></i>
+        </div>
+        <div class="opencartbody1">
+            <div class="innerbody">
+            <div class="divdata" *ngFor="let cartlist of getallproductsandquantity; index as i">
+                <div class="innerdiv">
+        <div class="leftimage">
+<img [src]="cartlist.imageURL" alt="">
+        </div>
+<div class="rightdata">
+    <p>{{i}}</p>
+                        <p>Price : {{cartlist.Grandtotal}}</p>
+                        <p> Quantity{{cartlist.Quantity}}</p>
+                        <p>Pname{{cartlist.Pname}}</p>
+                        <p>Stock{{cartlist.Stock}}</p>
+                        <!-- <p><img [src]="cartlist.imageURL" alt=""></p> -->
+                    </div>
+            </div></div></div>
+       
+        
+
+        </div>
+    </div> <div class="opencartbackground1" *ngIf="openprofile">
+        
+        <div class="cancel">
+            <i (click)="closeprofile()" class="bi bi-x"></i>
+        </div>
+        <div class="opencartbody1">
+            <!-- <div *ngFor="let cartlist of getlist">
+                        <p>{{cartlist.data.Quantity}}</p>
+                        <p>{{cartlist.data.Grandtotal}}</p>
+            </div> -->
+            <div class="image">
+                <i class="bi bi-x-circle-fill"></i><br>
+                
+                <p><span>Service Unavailable</span><p>
+                    <div style="line-height: 1vh;align-items: center;display: flex;justify-content: center;flex-direction: column;">
+                    <h4>We are currently experiencing technical difficulties<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Add to cart Service update soon</h4>
+                </div>
+            </div>
+        
+
+        </div>
+    </div>
+</div>

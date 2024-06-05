@@ -1,0 +1,171 @@
+<div class="header">
+    <p (click)="home()"> <i class="bi bi-house-door-fill"></i> <span>Home</span> </p>
+    <p (click)="staffupdation()"> <i class="bi bi-people-fill"></i><span>RollUpdation</span></p>
+    <p> <i class="bi bi-bar-chart"></i><span>Analysis</span></p>
+    <p (click)="delivery()"> <i class="bi bi-truck"></i><span>Delivery</span></p>
+</div>
+
+<div class="staffcontainer">
+
+
+
+    <div class="search">
+        <div><i class="bi bi-search"></i>
+
+            <input type="text" placeholder="Search Phone-No" (input)="searchpnum()" [(ngModel)]="searchparam">
+        </div>
+        <button (click)="openpopup()" style="position: fixed;right: 10vw;outline: none;" mat-raised-button>Create</button>
+    </div>
+
+    <div class="createstaffbackground" *ngIf="openpopups">
+        <div class="cancel3">
+            <i (click)="closepopup()" class="bi bi-x"></i>
+          </div>
+        <div class="createstaffbody">
+            <div>
+                <form [formGroup]="staffcreate" >
+                    <h1>Staff Creation</h1>
+<div style="width: 60vw;align-items: center;display: flex;justify-content: center;" >
+                    <mat-form-field class="example-full-width" style="margin-right: 7vw;">
+                        <mat-label>Name</mat-label>
+                        <input  matInput formControlName="staffName">
+                    </mat-form-field>
+
+                    <mat-radio-group formControlName="Gender" aria-label="Select an option">
+                        <mat-radio-button  value="male" >Male</mat-radio-button>
+                        <mat-radio-button   value="female" >Female</mat-radio-button>
+                      </mat-radio-group>
+            
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input  matInput formControlName="Email">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>PhoneNumber</mat-label>
+                        <input  matInput formControlName="phoneNumber">
+                    </mat-form-field>    
+                </div>
+                                <mat-form-field class="example-full-width">
+                        <mat-label>Password</mat-label>
+                        <input  matInput formControlName="password">
+                    </mat-form-field>
+                    <button (click)="submit()" style="outline: none;"  mat-raised-button>Submit</button>
+
+                </form>
+            </div>
+    
+            
+    </div>
+    </div>
+
+    <div class="headerpopup">
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>RollId</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let staff of getuserlist">
+                    <td>{{staff.data.userName}}</td>
+                    <td>{{staff.data.Gender}}</td>
+                    <td>{{staff.data.phoneNumber}}</td>
+                    <td>{{staff.data.Email}}</td>
+                    <td >{{staff.data.RollId.split("_")[0]}}</td>
+                    <td> <button (click)="editaction(staff)" id="editaction"> <i id="bi-pencil-square"
+                                class="bi bi-pencil-square"></i>
+                        </button></td>
+                    <td><button (click)="performDelete(staff)" id="editaction">
+                            <i id="bi-pencil-square" class="bi bi-trash3"></i>
+                        </button>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- pop up -->
+    <div class="updatebackground" *ngIf="!openupdatedialog">
+        <div class="cancel">
+            <i (click)="cancel()" class="bi bi-x"></i>
+        </div>
+        <div class="updatedialogbox">
+            <p>Update Staff Roll</p>
+            <form [formGroup]="updaterole" class="example-form">
+                <div class="firstdiv">
+                    <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Name</mat-label>
+                            <input readonly="userName" matInput formControlName="userName">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Gender</mat-label>
+                            <input readonly="Gender" matInput formControlName="Gender">
+                        </mat-form-field>
+                    </div>
+                    <div> <mat-form-field class="example-full-width">
+                            <mat-label>Phone</mat-label>
+                            <input readonly="phoneNumber" matInput formControlName="phoneNumber">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input readonly="Email" matInput formControlName="Email">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>RollId</mat-label>
+                        <mat-select formControlName="RollId">
+                            <div *ngFor="let roll of getid">
+                                <mat-option [value]="roll._id">{{roll.data.name}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+                <button mat-raised-button color="primary" (click)="validation()">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="delpopupbackside" *ngIf="openpopup1">
+    <div class="dcancel">
+        <i (click)="profile()" class="bi bi-x"></i>
+    </div>
+    <div class="delpopbackground">
+        <div class="deletebordericon">
+            <i class="bi bi-exclamation-triangle"></i>
+
+        </div>
+        <div style="align-items: center;display: flex;justify-content: center;flex-direction: column;">
+            <p> Are You Sure ?</p>
+            <h5>You Want to delete this items </h5>
+        </div>
+
+        <div class="deletefooter">
+            <div class="deletedata">
+                <div class="dpimage">
+                </div>
+                <div class="dpdetails">
+                    <td> Name &nbsp;&nbsp;&nbsp;: {{updaterole.value.userName}}</td>
+                    <td> Gender &nbsp;: {{updaterole.value.Gender}}</td>
+                    <td> Phone-No &nbsp;: {{updaterole.value.phoneNumber}}</td>
+                </div>
+            </div>
+            <button id="deletebutton" (click)="deleted()">Delete field</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,186 @@
+.delivarycontainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  height: 10vh;
+  width: 100%;
+  background-color: #FDFDFD;
+  box-shadow:
+    inset 5px 5px 10px #fafafa65,
+    5px 5px 10px rgba(200, 203, 205, 0.459);
+  display: flex;
+  align-items: center;
+}
+
+.header p {
+  padding-inline: 2vw;
+  margin-left: 2vw;
+  animation: buttonTransform 6s infinite;
+  outline: none;
+}
+
+.header p i {
+  font-size: 2.5vh;
+}
+
+span {
+  font-size: 2.5vh;
+  margin-left: 1vw;
+  border: none;
+  box-shadow:
+    inset 5px 5px 10px #fafafa65,
+    5px 5px 10px rgba(200, 203, 205, 0.459);
+  padding: 1vh;
+
+}
+
+.search {
+  height: 15vh;
+  width: 90vw;
+  top: 7vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10vw;
+}
+
+.search input {
+  width: 30vw;
+  padding: 2vh;
+  border-radius: 2vh;
+  outline: none;
+  border: none;
+  font-size: 2vh;
+  box-shadow:
+    inset 5px 5px 10px #fafafa65,
+    5px 5px 10px rgba(200, 203, 205, 0.459);
+  position: relative;
+  margin-left: 10vw;
+}
+
+.search i {
+  position: absolute;
+  z-index: 4;
+  font-size: 3.5vh;
+  bottom: 5.5vh;
+  right: 27vw;
+  color: gray;
+
+}
+
+#searchinput {
+  z-index: 10;
+  text-align: center;
+}
+
+.headerbackground {
+  height: 80vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* background-color: red; */
+}
+
+.headerpopup {
+  position: absolute;
+  border-radius: 2vh;
+  box-shadow:
+    inset 5px 5px 10px rgba(217, 213, 213, 0.345),
+    5px 5px 10px rgba(62, 61, 61, 0.2);
+  height: 80vh;
+  width: 90vw;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+.headerpopup p {
+  height: 7vh;
+  align-items: center;
+  display: flex;
+  margin-left: 2vh;
+  font-weight: 600;
+  font-family: gotham !important;
+}
+
+.headerpopbody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.table {
+  max-height: 75vh;
+  width: 90vw;
+  overflow-y: auto;
+  margin-top: 1vh;
+}
+
+table {
+
+  width: 100%;
+  border: none;
+}
+
+table th,
+table td {
+  padding: 2vh
+}
+
+table th {
+  text-align: center;
+  font-size: 1.8vh;
+}
+
+
+table td {
+  text-align: center;
+  font-weight: 100 !important;
+  font-size: 1.9vh;
+  text-transform: capitalize;
+}
+
+.table-container {
+  max-height: 60vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+thead {
+  background-color: #e8eaf3;
+  position: sticky;
+  top: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
+tr {
+  border-radius: 50%;
+  margin-block: 5vh;
+}
+
+tbody {
+  border: 1px solid #9ba0c97a;
+}
+
+td button:nth-child(2) {
+  margin-left: 3vh;
+}

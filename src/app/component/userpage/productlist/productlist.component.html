@@ -1,0 +1,213 @@
+<div class="clickoption">
+    <p (click)="all()">All<img src="" alt=""></p>
+    <p (click)="mens()">mens</p>
+    <p (click)="womens()">womens</p>
+    <p (click)="kids()">kids</p>
+</div>
+<div class="listbackground">
+    <div class="product" *ngFor="let products of filteredProducts">
+        <div class="img">
+            <div class="image">
+                <p><img src="{{products.data.imageURL}}" (click)="opencart(products)" alt=""></p>
+            </div>
+        </div>
+        <div class="productdetails">
+            <div style="height: 5vh;width:8vw;align-items: center;display: flex;">
+                <p>{{products.data.Pname}} </p>
+            </div>
+
+            <div *ngIf="products.data.Stock > 0">
+                <p style="font-size: 12px; margin: 1vh;">{{ products.data.Stock }} - items only left</p>
+            </div>
+            <div *ngIf="products.data.Stock === 0">
+                <p style="font-size: 12px; margin: 1vh; color: red;">Out of Stock</p>
+            </div><br>
+            <div style="display: flex;">
+                <p style="font-weight: 600;font-size: 3vh;">{{products.data.Price}} /-</p> &nbsp;
+                <p style="color: red;font-weight: 500;"> <s>{{products.data.OriginalPrice}}</s>-</p>
+            </div>
+            <p style="color: green;font-weight: 500;"><span style="color: green;font-weight: 500;">offer</span>:
+                {{products.data.Offer}}</p>
+            <div class="buy">
+                <button (click)="review(products)">Review</button>
+
+                <button (click)="Buyproduct(products)">Buy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Increase Quantity -->
+
+<div class="buybackground" *ngIf="buypopup">
+    <div class="cancel">
+        <i (click)="profile()" class="bi bi-x"></i>
+    </div>
+    <div class="buybackgroundbody">
+        <div>
+            <div class="buyheader">
+                <h2 Style="font-weight: 700;color:#9191918f;font-size: 5vh;">PAYMENTS</h2>
+            </div>
+            <div class="formbody">
+                <div class="formleft">
+                    <p><img [src]="showbuydetial.data.imageURL" alt=""></p>
+
+                </div>
+                <div class="formright">
+                    <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                        <div class="quantity-control">quantity
+                            <button (click)="decreaseQuantity()">-</button>
+                            <span class="quantity">{{ quantity }}</span>
+                            <button (click)="increaseQuantity()">+</button>
+                            <hr>
+                        </div>
+                        <div class="grandtotal">
+                            <p> grand Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{increasetotal}}</p>
+                        </div>
+                    </div>
+                    <div class="formrightbutton">
+                        <Button (click)="delivery()">Buy</Button>
+                        <Button style="padding-block: 1vh;" (click)="addcart()">AddCart</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delivery Address -->
+
+<div class="buybackground" *ngIf="deliverypopup">
+    <div class="cancel1">
+        <i (click)="deliverycancel()" class="bi bi-x"></i>
+    </div>
+    <div class="buybackgroundbody" style="height: 80vh;">
+        <div>
+            <div class="buyheader">
+                <h2 Style="font-weight: 700;color:#9191918f;font-size: 5vh;">Delivery Details</h2>
+            </div>
+            <div class="formbody">
+                <div class="formleft">
+                    <div style="margin-top: 20vh;">
+                        <p><img [src]="showbuydetial.data.imageURL" alt=""></p>
+                    </div>
+                    <div style="" class="formrightbutton">
+                        <Button [disabled]="!Order.valid" (click)="submitOrder()">Submit</Button>
+
+                    </div>
+                </div>
+                <div class="formright">
+                    <form [formGroup]="Order">
+                        <div id="h">
+                            <input type="text" placeholder="Name" formControlName="Name">
+                            <div id="errorcolor"
+                                *ngIf="Order.get('Name')?.invalid && (Order.get('Name')?.dirty || Order.get('Name')?.touched)">
+                                <div id="e" *ngIf="Order.get('Name')?.errors?.['required']">Name is required.</div>
+                                <div id="e" *ngIf="Order.get('Name')?.errors?.['minlength']">Name must be at least 2
+                                    characters long.</div>
+                                <div id="e" *ngIf="Order.get('Name')?.errors?.['maxlength']">Name cannot exceed 50
+                                    characters.</div>
+                                <div id="e" *ngIf="Order.get('Name')?.errors?.['pattern']">Invalid characters in name.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="h">
+                            <input type="text" placeholder="Mobilenumber" formControlName="Mobilenumber">
+                            <div *ngIf="Order.get('Mobilenumber')?.invalid && Order.get('Mobilenumber')?.touched">
+                                <div id="e" *ngIf="Order.get('Mobilenumber')?.errors?.['required']">
+                                    Phone number is required.
+                                </div>
+                                <div id="e"
+                                    *ngIf="Order.get('Mobilenumber')?.errors?.['pattern'] && Order.get('Mobilenumber')?.touched">
+                                    Please enter a valid 10-digit phone number.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="h">
+                            <input type="text" placeholder="Doorno" formControlName="Doorno">
+                            <div *ngIf="Order.get('Doorno')?.invalid && Order.get('Doorno')?.touched">
+                                <div id="e" *ngIf="Order.get('Doorno')?.errors?.['required']">Doorno is required.</div>
+                                <div id="e" *ngIf="Order.get('Doorno')?.errors?.['minlength']">Doorno must be at least 2
+                                    digit long.</div>
+                            </div>
+                        </div>
+                        <div id="h">
+                            <input type="text" placeholder="Streetname" formControlName="Streetname">
+                            <div *ngIf="Order.get('Streetname')?.invalid && Order.get('Streetname')?.touched">
+
+                                <div id="e" *ngIf="Order.get('Streetname')?.errors?.['required']">StreetName is
+                                    required.</div>
+                                <div id="e" *ngIf="Order.get('Streetname')?.errors?.['minlength']">StreetName must be at
+                                    least 2 characters long.</div>
+                                <div id="e" *ngIf="Order.get('Streetname')?.errors?.['maxlength']">StreetName cannot
+                                    exceed 50 characters.</div>
+                            </div>
+                        </div>
+                        <div id="h">
+                            <input type="text" placeholder="City" formControlName="City">
+                            <div *ngIf="Order.get('City')?.invalid && Order.get('City')?.touched">
+
+                                <div id="e" *ngIf="Order.get('City')?.errors?.['required']">StreetName is required.
+                                </div>
+                                <div id="e" *ngIf="Order.get('City')?.errors?.['minlength']">StreetName must be at least
+                                    2 characters long.</div>
+                                <div id="e" *ngIf="Order.get('City')?.errors?.['maxlength']">Name cannot exceed 50
+                                    characters.</div>
+                                <div id="e" *ngIf="Order.get('City')?.errors?.['pattern']">Invalid characters in name.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="h">
+                            <input type="text" placeholder="Pincode" formControlName="Pincode">
+
+                            <div *ngIf="Order.get('Pincode')?.invalid && Order.get('Pincode')?.touched">
+                                <div id="e" *ngIf="Order.get('Pincode')?.errors?.['required']">
+                                    Phone number is required.
+                                </div>
+                                <div id="e"
+                                    *ngIf="Order.get('Pincode')?.errors?.['pattern'] && Order.get('Pincode')?.touched">
+                                    Please enter a valid 6 phone number.
+                                </div>
+                                <div id="e" *ngIf="Order.get('Pincode')?.errors?.['minlength']">Pincode must be at least
+                                    6 digit long.</div>
+                                <div id="e" *ngIf="Order.get('Pincode')?.errors?.['maxlength']">Pincode cannot exceed 6
+                                    digit.</div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+</div>
+
+<!-- Reviews -->
+
+<div class="reviewbackground" *ngIf="reviewopen">
+    <div class="cancelreview">
+        <i (click)="profile()" class="bi bi-x"></i>
+    </div>
+    <div class="reviewbody">
+        <div class="cartright">
+            <div class="review">
+                <div class="textbox">
+                    <input type="text" placeholder="Send your reviews..." [(ngModel)]="postMessage">
+                    <i class="bi bi-send-fill" (click)="sendReview();"></i>
+                </div>
+                <div class="content">
+                    <div class="card" *ngFor="let review of dialog">
+                        <h4 style="margin-top:1px;font-size:2vh">👉 {{review.data.Comment}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

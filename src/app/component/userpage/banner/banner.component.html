@@ -1,0 +1,25 @@
+<div class="flex">
+    <div class="rightflex">
+        <div class="carousel-slide" *ngFor="let image of images; let i = index"
+            [ngClass]="{ 'active': i === activeIndex }">
+            <img [src]="image" alt="Slide {{i + 1}}">
+        </div>
+        <img src="" alt="rightflex">
+    </div>
+    <div class="leftside">
+        <div class="leftflex">
+            <img src="assets\images\user\righttop.jpg" alt="rightflex">
+        </div>
+        <div class="rightbottom">
+            <div class="rightleft">
+                <img src="assets\images\user\rightleft.jpg" alt="rightflex">
+
+            </div>
+            <div class="leftleft">
+                <img src="assets\images\user\rightright.jpg" alt="rightflex">
+            </div>
+        </div>
+
+    </div>
+
+</div>

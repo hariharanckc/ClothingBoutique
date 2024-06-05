@@ -1,0 +1,46 @@
+<div class="deliverycontainer">
+    <div class="header">
+        <p (click)="home()"> <i class="bi bi-house-door-fill"></i> <span>Home</span> </p>
+        <p (click)="staffupdation()"> <i class="bi bi-people-fill"></i><span>RollUpdation</span></p>
+        <p> <i class="bi bi-bar-chart"></i><span>Analysis</span></p>
+        <p (click)="delivery()"> <i class="bi bi-truck"></i><span>Delivery</span></p>
+    </div>
+
+    <!-- Search -->
+
+    <div class="search">
+        <div><i class="bi bi-search"></i>
+            <input type="text" placeholder="Search" (input)="searchpnum()" [(ngModel)]="searchparam">
+        </div>
+    </div>
+    <div class="headerbackground">
+        <div class="headerpopup">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Mobilenumber</th>
+                            <!-- <th>Quantity</th>
+                            <th>GrandTotal</th> -->
+                            <th>Door no</th>
+                            <th>StreetName</th>
+                            <th>City</th>
+                            <th>Pincode</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let staff of getdelivarylist">
+                        <td>{{staff.data.Name}}</td>
+                        <td>{{staff.data.Mobilenumber}}</td>
+                        <!-- <td>{{staff.data.Quantity}}</td>
+                        <td>{{staff.data.Grandtotal}}</td> -->
+                        <td>{{staff.data.Doorno}}</td>
+                        <td>{{staff.data.Streetname}}</td>
+                        <td>{{staff.data.City}}</td>
+                        <td>{{staff.data.Pincode}}</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

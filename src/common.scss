@@ -1,0 +1,19 @@
+$cell-odd-background-color: lightyellow;
+$row-mouse-hover-color: lightgreen;
+
+@import '@slickgrid-universal/common/dist/styles/sass/slickgrid-theme-material.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.slick-header-column {
+    .slick-header-menu-button {
+        display: none;
+    }
+
+    &:hover {
+        .slick-header-menu-button {
+            display: inline;
+        }
+    }
+}
